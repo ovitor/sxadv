@@ -1,0 +1,18 @@
+% contents - commands to apply in the initial petition
+
+\ProvidesPackage{utils/sxadv}[2019/08/03 Aplicacao de definicoes para estilo do escritorio]
+
+% linha vertical vermelha
+\usepackage{color}
+\definecolor{vitor}{RGB}{0,0,0}
+\usepackage[
+  placement=top,
+  angle=0,
+  color=red,
+  scale=4,
+  hshift=72]{background}
+\backgroundsetup{contents={\rule{.4pt}{\paperheight}}}
+
+% logo no canto superior direito
+\usepackage{fancyhdr}
+\fancyhead[R]{oi}

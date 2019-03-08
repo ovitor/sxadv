@@ -1,0 +1,27 @@
+% contents - commands to apply in the initial petition
+
+\ProvidesPackage{utils/petition}[2019/08/03 Aplicacao de definicoes para peticoes]
+
+% outros
+\selectlanguage{brazil}
+\pagestyle{empty}
+
+% tipografia
+\setmainfont{Times New Roman}
+% comandos estruturais
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.4cm} % tente também \onelineskip
+
+% margens 
+\setulmarginsandblock{2.5cm}{2.5cm}{*}
+\setlrmarginsandblock{2.5cm}{3cm}{*}
+\checkandfixthelayout
+
+% linha vertical
+
+% comandos diversos
+\newcommand\assinatura[2]{%
+  {\vspace{.35cm}\centering\noindent\rule{10cm}{0.3pt}\\#1 (OAB nº: #2)\\\vspace{.35cm}}
+}
