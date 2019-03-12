@@ -2,35 +2,32 @@
 
 \ProvidesPackage{utils/petition}[2019/08/03 Aplicacao de definicoes para peticoes]
 
+% pacotes requeridos
+
 % outros
 \selectlanguage{brazil}
 \pagestyle{empty}
 \setsecnumdepth{subsection}
+\setsecheadstyle{\centering\normalsize\bfseries}
+\setsubsecheadstyle{\centering\normalsize\bfseries}
+\makeatletter
+\renewcommand*{\@seccntformat}[1]{\csname the#1\endcsname\hspace{0.02cm}}
+\makeatother
 
 % tipografia
-% \setmainfont{Times New Roman}
+% \setmainfont{Times New Roman} % descomentar se windows
 
 % titulos, seções e subseções
-% \usepackage{titlesec}
 \renewcommand{\printchaptername}{}
 \renewcommand{\thechapter}{}
 
-%\titleformat*{\section}{\centering\normalfont\Large\bfseries}
-%\titleformat*{\subsection}{\centering\normalfont\bfseries}
 % seção e subseção
-%\makeatletter
-\renewcommand{\thesection}{
-  \uppercase{\roman{section}}
+\renewcommand\thesection{
+  \uppercase{\normalsize\roman{section}}
 }
-%\makeatother
 \renewcommand{\thesubsection}
-  {\thesection.\uppercase{\roman{subsection}}
+  {\thesection.\uppercase{\normalsize\roman{subsection}}
 }
-% \makeatletter
-% \let\l@subsection\l@section
-% \let\l@section\l@chapter
-% \makeatother
-
 % comandos estruturais
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
@@ -42,9 +39,7 @@
 \setlrmarginsandblock{2.5cm}{3cm}{*}
 \checkandfixthelayout
 
-% linha vertical
-
 % comandos diversos
-\newcommand\assinatura[2]{%
-  {\vspace{.35cm}\centering\noindent\rule{10cm}{0.3pt}\\#1 (OAB nº: #2)\\\vspace{.35cm}}
-}
+%\newcommand\assinatura[2]{%
+%  {\vspace{.35cm}\centering\noindent\rule{10cm}{0.3pt}\\#1 (OAB nº: #2)\\\vspace{.35cm}}
+%}
