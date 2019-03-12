@@ -5,9 +5,32 @@
 % outros
 \selectlanguage{brazil}
 \pagestyle{empty}
+\setsecnumdepth{subsection}
 
 % tipografia
-\setmainfont{Times New Roman}
+% \setmainfont{Times New Roman}
+
+% titulos, seções e subseções
+% \usepackage{titlesec}
+\renewcommand{\printchaptername}{}
+\renewcommand{\thechapter}{}
+
+%\titleformat*{\section}{\centering\normalfont\Large\bfseries}
+%\titleformat*{\subsection}{\centering\normalfont\bfseries}
+% seção e subseção
+%\makeatletter
+\renewcommand{\thesection}{
+  \uppercase{\roman{section}}
+}
+%\makeatother
+\renewcommand{\thesubsection}
+  {\thesection.\uppercase{\roman{subsection}}
+}
+% \makeatletter
+% \let\l@subsection\l@section
+% \let\l@section\l@chapter
+% \makeatother
+
 % comandos estruturais
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
