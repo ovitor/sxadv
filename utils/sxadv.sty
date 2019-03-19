@@ -12,6 +12,13 @@
   hshift=72]{background}
 \backgroundsetup{contents={\rule{.4pt}{\paperheight}}}
 
-% logo no canto superior direito
-\usepackage{fancyhdr}
-\fancyhead[R]{oi}
+% cabecalho e rodape
+\makepagestyle{sxadv}
+%\setlength{\headwidth}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}
+\setlength{\headwidth}{46cm}
+\makeevenhead{sxadv}{}{}{\includegraphics[width=6cm]{./utils/images/logo.jpg}}
+\makeoddhead{sxadv}{}{}{\includegraphics[width=6cm]{./utils/images/logo.jpg}}
+\makeevenfoot{sxadv}{}{simple text}{}
+\makeoddfoot{sxadv}{}{}{\\*my text\\*new line\\*other line\\*last line}
+\setlength{\headheight}{32pt}
+\pagestyle{sxadv}
