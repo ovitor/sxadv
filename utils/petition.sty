@@ -4,37 +4,25 @@
 
 % pacotes requeridos
 \usepackage[framemethod=default]{mdframed}
-\newmdenv[linecolor=gray,backgroundcolor=white]{caixa}
+\usepackage{fontspec}
+
+% configuracao dos pacotes
+\newmdenv[linecolor=black,backgroundcolor=white]{caixa}
+\setmainfont{FiraSans-Light}
 
 % outros
 \selectlanguage{brazil}
-%\pagestyle{empty}
 \setsecnumdepth{subsection}
-%\setsecheadstyle{\centering\normalsize\bfseries}
-%\setsubsecheadstyle{\centering\normalsize\bfseries}
 
 \makeatletter
 \makeatother
-\setulmarginsandblock{2.5cm}{2.5cm}{*}
+\setulmarginsandblock{3.0cm}{3.0cm}{*}
 \setlrmarginsandblock{2.5cm}{2.5cm}{*}
 \checkandfixthelayout
-\setlength{\parindent}{1.3cm}
-\setlength{\parskip}{0.4cm} % tente também \onelineskip
-\pagenumbering{roman}
-
-% tipografia
-% \setmainfont{Times New Roman} % descomentar se windows
-
-% comandos estruturais
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.4cm} % tente também \onelineskip
-
-% comandos diversos
-%\newcommand\assinatura[2]{%
-%  {\vspace{.35cm}\centering\noindent\rule{10cm}{0.3pt}\\#1 (OAB nº: #2)\\\vspace{.35cm}}
-%}
 
 % capitulo
 \makeatletter

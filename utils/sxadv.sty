@@ -2,23 +2,37 @@
 
 \ProvidesPackage{utils/sxadv}[2019/08/03 Aplicacao de definicoes para estilo do escritorio]
 
-% linha vertical vermelha
+% pacotes requeridos
 \usepackage{color}
-\definecolor{vitor}{RGB}{0,0,0}
-\usepackage[
-  angle=0,
-  color=red,
-  scale=4,
-  hshift=72]{background}
-\backgroundsetup{contents={\rule{.4pt}{\paperheight}}}
+\usepackage{eso-pic}
+
+% comando para background
+\newcommand\BackgroundPic{
+    \put(0,0){
+    \parbox[b][\paperheight]{\paperwidth}{%
+    \vfill
+    \centering
+    \includegraphics[width=\paperwidth,height=\paperheight]{utils/images/bg.pdf}
+    \vfill
+}}}
 
 % cabecalho e rodape
 \makepagestyle{sxadv}
-%\setlength{\headwidth}{\dimexpr\textwidth+\marginparsep+\marginparwidth\relax}
-\setlength{\headwidth}{46cm}
-\makeevenhead{sxadv}{}{}{\includegraphics[width=6cm]{./utils/images/logo.jpg}}
-\makeoddhead{sxadv}{}{}{\includegraphics[width=6cm]{./utils/images/logo.jpg}}
-\makeevenfoot{sxadv}{}{simple text}{}
-\makeoddfoot{sxadv}{}{}{\\*my text\\*new line\\*other line\\*last line}
-\setlength{\headheight}{32pt}
+\makeoddhead{sxadv}{}{}{}
+\makeoddfoot{sxadv}{}{}{}
 \pagestyle{sxadv}
+
+% cabecalho e rodape - 1a pagina
+\copypagestyle{chapter}{plain}
+\makeoddhead{chapter}{}{}{}
+\makeoddfoot{chapter}{}{}{}
+
+% comandos diversos
+\newcommand\hoje[0]{
+  \noindent Fortaleza - CE, \today\\
+}
+\newcommand\assinatura[2]{%
+  \noindent #1\\ (OAB nº: #2)\\
+}
+
+
