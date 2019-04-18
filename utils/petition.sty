@@ -3,43 +3,75 @@
 \ProvidesPackage{utils/petition}[2019/08/03 Aplicacao de definicoes para peticoes]
 
 % pacotes requeridos
+\usepackage[framemethod=default]{mdframed}
+\newmdenv[linecolor=gray,backgroundcolor=white]{caixa}
 
 % outros
 \selectlanguage{brazil}
-\pagestyle{empty}
+%\pagestyle{empty}
 \setsecnumdepth{subsection}
-\setsecheadstyle{\centering\normalsize\bfseries}
-\setsubsecheadstyle{\centering\normalsize\bfseries}
+%\setsecheadstyle{\centering\normalsize\bfseries}
+%\setsubsecheadstyle{\centering\normalsize\bfseries}
+
 \makeatletter
-\renewcommand*{\@seccntformat}[1]{\csname the#1\endcsname\hspace{0.02cm}}
 \makeatother
+\setulmarginsandblock{2.5cm}{2.5cm}{*}
+\setlrmarginsandblock{2.5cm}{2.5cm}{*}
+\checkandfixthelayout
+\setlength{\parindent}{1.3cm}
+\setlength{\parskip}{0.4cm} % tente também \onelineskip
+\pagenumbering{roman}
 
 % tipografia
 % \setmainfont{Times New Roman} % descomentar se windows
 
-% titulos, seções e subseções
-\renewcommand{\printchaptername}{}
-\renewcommand{\thechapter}{}
-
-% seção e subseção
-\renewcommand\thesection{
-  \uppercase{\normalsize\roman{section}}
-}
-\renewcommand{\thesubsection}
-  {\thesection.\uppercase{\normalsize\roman{subsection}}
-}
 % comandos estruturais
 % O tamanho do parágrafo é dado por:
 \setlength{\parindent}{1.3cm}
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.4cm} % tente também \onelineskip
 
-% margens 
-\setulmarginsandblock{1.5cm}{3.5cm}{*}
-\setlrmarginsandblock{2.5cm}{2.5cm}{*}
-\checkandfixthelayout
-
 % comandos diversos
 %\newcommand\assinatura[2]{%
 %  {\vspace{.35cm}\centering\noindent\rule{10cm}{0.3pt}\\#1 (OAB nº: #2)\\\vspace{.35cm}}
 %}
+
+% capitulo
+\makeatletter
+\makechapterstyle{petitionstyle}{%
+  \renewcommand*{\chaptitlefont}{\large\bfseries}
+  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\printchapternum}{}
+  \renewcommand{\printchaptertitle}[1]{
+  \begin{caixa}
+    \chaptitlefont 
+      \center\uppercase{##1}%
+  \end{caixa}
+  }%
+}
+\chapterstyle{petitionstyle}
+
+% secoes e subsecoes
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\thesection.\Roman{subsection}}
+
+\makeatletter
+
+\renewcommand{\section}{\@startsection {section}{1}{\z@}%
+             {-3.5ex \@plus -1ex \@minus -.2ex}%
+             {2.3ex \@plus .2ex}%
+             {\centering\normalfont\normalsize\scshape\bfseries\uppercase}
+           }
+
+\renewcommand{\subsection}{\@startsection{subsection}{2}{\z@}%
+             {-3.25ex\@plus -1ex \@minus -.2ex}%
+             {1.5ex \@plus .2ex}%
+             {\centering\normalfont\normalsize\scshape\bfseries\uppercase}}
+
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{2}{\z@}%
+             {-3.25ex\@plus -1ex \@minus -.2ex}%
+             {1.5ex \@plus .2ex}%
+             {\centering\normalfont\normalsize\scshape\bfseries\uppercase}}
+
+\makeatother
+
