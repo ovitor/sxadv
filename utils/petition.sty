@@ -5,10 +5,12 @@
 % pacotes requeridos
 \usepackage[framemethod=default]{mdframed}
 \usepackage{fontspec}
+%\usepackage{parskip}
+%\usepackage[doublespacing]{setspace}
 
 % configuracao dos pacotes
 \newmdenv[linecolor=black,backgroundcolor=white]{caixa}
-\setmainfont{FiraSans-Light}
+\setmainfont{Roboto-Light}
 
 % outros
 \selectlanguage{brazil}
@@ -20,7 +22,8 @@
 \setlrmarginsandblock{2.5cm}{2.5cm}{*}
 \checkandfixthelayout
 % O tamanho do parágrafo é dado por:
-\setlength{\parindent}{1.3cm}
+\linespread{1.5} 
+%\setlength{\parindent}{2cm}
 % Controle do espaçamento entre um parágrafo e outro:
 \setlength{\parskip}{0.4cm} % tente também \onelineskip
 
@@ -35,7 +38,7 @@
     \chaptitlefont 
       \center\uppercase{##1}%
   \end{caixa}
-  }%
+  }
 }
 \chapterstyle{petitionstyle}
 
@@ -64,10 +67,16 @@
 \makeatother
 
 % citacao
-\newenvironment{citacao}[1]{
-  \addtolength{\leftskip}{4cm}
+\newenvironment{citacao}
+{% This is the begin code
+  %\setstretch{1.0}
   \begin{SingleSpace}
-    \small
-    {#1}
-  \end{SingleSpace}
+    \linespread{1.0}
+    \addtolength{\leftskip}{4cm}
+    \begin{footnotesize}
+    \par\noindent
+}
+{
+    \end{footnotesize}
+  \end{SingleSpace} 
 }
