@@ -63,3 +63,11 @@
 
 \makeatother
 
+% citacao
+\newenvironment{citacao}[1]{
+  \addtolength{\leftskip}{4cm}
+  \begin{SingleSpace}
+    \small
+    {#1}
+  \end{SingleSpace}
+}
