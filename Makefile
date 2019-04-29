@@ -5,10 +5,10 @@ all: compile
 	echo 'ok'
 
 compile:
-	$(TEX) base.tex
+	$(TEX) $(name).tex
 
 preview:
-	$(PREVIEW) base.pdf
+	$(PREVIEW) $(name).pdf
 
 clean:
 	-rm -f figuras/fontes/*.aux
