@@ -5,10 +5,12 @@
 % pacotes requeridos
 \usepackage[framemethod=default]{mdframed}
 \usepackage{fontspec}
+\usepackage{xspace}
 %\usepackage{parskip}
 %\usepackage[doublespacing]{setspace}
 
 % configuracao dos pacotes
+\graphicspath{ {imagens/} }
 \newmdenv[linecolor=black,backgroundcolor=white]{caixa}
 \setmainfont{Roboto-Light}
 
@@ -75,8 +77,28 @@
     \addtolength{\leftskip}{4cm}
     \begin{footnotesize}
     \par\noindent
+    \ignorespaces
 }
 {
     \end{footnotesize}
   \end{SingleSpace} 
 }
+
+% figurasimples
+\NewDocumentCommand\figurasimples{ommm}{
+\IfNoValueTF{#1}{
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=#4]{#2} \par 
+    \caption{#3}\label{fig:#2}
+  \end{center}
+\end{figure}
+}
+{
+\begin{figure}[H]
+  \begin{center}
+    \includegraphics[width=#4]{#2} \par
+    \caption{#3 (Fonte: {#1})}\label{fig:#2}
+  \end{center}
+\end{figure}
+}\xspace}

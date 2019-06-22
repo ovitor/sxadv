@@ -11,11 +11,6 @@ preview:
 	$(PREVIEW) $(name).pdf
 
 clean:
-	-rm -f figuras/fontes/*.aux
-	-rm -f figuras/fontes/*.
-	-rm -f figuras/fontes/*.fdb_latexmk
-	-rm -f figuras/fontes/*.fls
-	-rm -f figuras/fontes/*.log
 	-rm -f *.aux
 	-rm -f *.bbl
 	-rm -f *.blg
